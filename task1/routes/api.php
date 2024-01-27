@@ -20,9 +20,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('token.valid')->group(function () {
     Route::get('/cards/{card_number}', [AcquiringController::class, 'checkCard']);
     Route::post('/cards/charge', [AcquiringController::class, 'charge']);
+    Route::get('getCards', [InternalController::class, 'getCards']);
 });
 
-Route::get('getCards', [InternalController::class, 'getCards']);
 
 //За это много не отнимайте я просто плохо понял задачу и переспрашивать по 100500 раз не хотел реализовал просто через мидл вейр
 //По итогу просто так время потерял
