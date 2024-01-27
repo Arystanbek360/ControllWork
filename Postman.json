@@ -1,0 +1,1844 @@
+{
+	"info": {
+		"_postman_id": "4c42445e-cca3-4cf6-8c27-c792bf744b0d",
+		"name": "CW",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28987365"
+	},
+	"item": [
+		{
+			"name": "Task 1",
+			"item": [
+				{
+					"name": "Auth",
+					"item": [
+						{
+							"name": "Login",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "jrice@example.net",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "password2",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{task1}}/auth/login",
+									"host": [
+										"{{task1}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "New Request",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "email",
+													"value": "jasen67@example.com",
+													"type": "text"
+												},
+												{
+													"key": "password",
+													"value": "password",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{task1}}/auth/login",
+											"host": [
+												"{{task1}}"
+											],
+											"path": [
+												"auth",
+												"login"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 27 Jan 2024 06:06:41 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 27 Jan 2024 06:06:41 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.1.2-1ubuntu2.14"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "58"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"user\": {\n        \"id\": 2,\n        \"name\": \"Ms. Mertie Schmitt\",\n        \"email\": \"jasen67@example.com\"\n    },\n    \"token\": \"3|rWrwyPwjuVwqaClQj0XJkhokBLN4VJLduIB7RIKx7969a58a\"\n}"
+								},
+								{
+									"name": "New Request",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "email",
+													"value": "jrice2@example.net",
+													"type": "text"
+												},
+												{
+													"key": "password",
+													"value": "password",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{task1}}/auth/login",
+											"host": [
+												"{{task1}}"
+											],
+											"path": [
+												"auth",
+												"login"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 27 Jan 2024 06:59:37 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 27 Jan 2024 06:59:37 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.1.2-1ubuntu2.14"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "58"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Не верный логин или пароль\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Register",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "jasen68@example.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "password",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "Arystanbek",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{task1}}/auth/register",
+									"host": [
+										"{{task1}}"
+									],
+									"path": [
+										"auth",
+										"register"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Login Copy",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "email",
+													"value": "jasen69@example.com",
+													"type": "text"
+												},
+												{
+													"key": "password",
+													"value": "password",
+													"type": "text"
+												},
+												{
+													"key": "name",
+													"value": "Arystanbek",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{task1}}/auth/register",
+											"host": [
+												"{{task1}}"
+											],
+											"path": [
+												"auth",
+												"register"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 27 Jan 2024 06:06:14 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 27 Jan 2024 06:06:14 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.1.2-1ubuntu2.14"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "59"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"user\": {\n        \"id\": 7,\n        \"name\": \"Arystanbek\",\n        \"email\": \"jasen69@example.com\"\n    }\n}"
+								},
+								{
+									"name": "Login Copy",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "email",
+													"value": "jasen69@example.com",
+													"type": "text"
+												},
+												{
+													"key": "password",
+													"value": "password",
+													"type": "text"
+												},
+												{
+													"key": "name",
+													"value": "Arystanbek",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{task1}}/auth/register",
+											"host": [
+												"{{task1}}"
+											],
+											"path": [
+												"auth",
+												"register"
+											]
+										}
+									},
+									"status": "Unprocessable Content",
+									"code": 422,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 27 Jan 2024 06:59:59 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 27 Jan 2024 06:59:59 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.1.2-1ubuntu2.14"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "55"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"The email has already been taken.\",\n    \"errors\": {\n        \"email\": [\n            \"The email has already been taken.\"\n        ]\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Me",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{task1}}/auth/me",
+									"host": [
+										"{{task1}}"
+									],
+									"path": [
+										"auth",
+										"me"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Me",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "",
+												"value": "",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "email",
+													"value": "jasen68@example.com",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "password",
+													"value": "password",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "name",
+													"value": "Arystanbek",
+													"type": "text",
+													"disabled": true
+												}
+											]
+										},
+										"url": {
+											"raw": "{{task1}}/auth/me",
+											"host": [
+												"{{task1}}"
+											],
+											"path": [
+												"auth",
+												"me"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 27 Jan 2024 06:05:52 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 27 Jan 2024 06:05:52 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.1.2-1ubuntu2.14"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "59"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"id\": 2,\n        \"name\": \"Ms. Mertie Schmitt\",\n        \"email\": \"jasen67@example.com\"\n    }\n}"
+								},
+								{
+									"name": "Me",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "",
+												"value": "",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": []
+										},
+										"url": {
+											"raw": "{{task1}}/auth/me",
+											"host": [
+												"{{task1}}"
+											],
+											"path": [
+												"auth",
+												"me"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 27 Jan 2024 07:00:21 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 27 Jan 2024 07:00:21 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.1.2-1ubuntu2.14"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Unauthenticated.\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Acquiring",
+					"item": [
+						{
+							"name": "Get Card",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{task1}}/cards/6393210982907237",
+									"host": [
+										"{{task1}}"
+									],
+									"path": [
+										"cards",
+										"6393210982907237"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Get Card",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{task1}}/cards/6393210982907237",
+											"host": [
+												"{{task1}}"
+											],
+											"path": [
+												"cards",
+												"6393210982907237"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 27 Jan 2024 06:27:19 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 27 Jan 2024 06:27:19 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.1.2-1ubuntu2.14"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "58"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Карта с номером 6393210982907237 найдена\",\n    \"card\": {\n        \"id\": 4,\n        \"number\": 6393210982907237,\n        \"expiry_month\": \"7\",\n        \"expiry_year\": 2148,\n        \"csv\": \"$2y$12$rHQnq.GLwpjqM/xf.3Os0.pp96JJjlLZRsfn8r4zsdJjIfF0Fh.wq\",\n        \"name\": \"Gianni Yost Jr.\",\n        \"balance\": \"570950.00\"\n    }\n}"
+								},
+								{
+									"name": "Get Card",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{task1}}/cards/6393210982907234",
+											"host": [
+												"{{task1}}"
+											],
+											"path": [
+												"cards",
+												"6393210982907234"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 27 Jan 2024 07:00:32 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 27 Jan 2024 07:00:32 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.1.2-1ubuntu2.14"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "56"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Карта с номером 6393210982907234 не найдена.\"\n}"
+								},
+								{
+									"name": "Get Card",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{task1}}/cards/6393210982907234",
+											"host": [
+												"{{task1}}"
+											],
+											"path": [
+												"cards",
+												"6393210982907234"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 27 Jan 2024 07:00:51 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 27 Jan 2024 07:00:51 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.1.2-1ubuntu2.14"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Unauthenticated.\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Payment",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "number",
+											"value": "6393210982907237",
+											"type": "text"
+										},
+										{
+											"key": "expiry_month",
+											"value": "02",
+											"type": "text"
+										},
+										{
+											"key": "csv",
+											"value": "001",
+											"type": "text"
+										},
+										{
+											"key": "owner",
+											"value": "Arystanbek",
+											"type": "text"
+										},
+										{
+											"key": "amount",
+											"value": "570550",
+											"type": "text"
+										},
+										{
+											"key": "expiry_year",
+											"value": "2024",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{task1}}/cards/charge",
+									"host": [
+										"{{task1}}"
+									],
+									"path": [
+										"cards",
+										"charge"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Get Card Copy",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "number",
+													"value": "6393210982907237",
+													"type": "text"
+												},
+												{
+													"key": "date",
+													"value": "06/25",
+													"type": "text"
+												},
+												{
+													"key": "csv",
+													"value": "001",
+													"type": "text"
+												},
+												{
+													"key": "owner",
+													"value": "Arystanbek",
+													"type": "text"
+												},
+												{
+													"key": "amount",
+													"value": "200",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{task1}}/cards/charge",
+											"host": [
+												"{{task1}}"
+											],
+											"path": [
+												"cards",
+												"charge"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 27 Jan 2024 06:27:03 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 27 Jan 2024 06:27:03 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.1.2-1ubuntu2.14"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "59"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Средства успешно списаны\",\n    \"balance\": 570950\n}"
+								},
+								{
+									"name": "Get Card Copy",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "number",
+													"value": "6393210982907237",
+													"type": "text"
+												},
+												{
+													"key": "date",
+													"value": "06/25",
+													"type": "text"
+												},
+												{
+													"key": "csv",
+													"value": "001",
+													"type": "text"
+												},
+												{
+													"key": "owner",
+													"value": "Arystanbek",
+													"type": "text"
+												},
+												{
+													"key": "amount",
+													"value": "570550",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{task1}}/cards/charge",
+											"host": [
+												"{{task1}}"
+											],
+											"path": [
+												"cards",
+												"charge"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 27 Jan 2024 07:01:43 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 27 Jan 2024 07:01:43 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.1.2-1ubuntu2.14"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "55"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Недостаточно средств на карте\"\n}"
+								},
+								{
+									"name": "Get Card Copy",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "number",
+													"value": "6393210982907237",
+													"type": "text"
+												},
+												{
+													"key": "date",
+													"value": "06/25",
+													"type": "text"
+												},
+												{
+													"key": "csv",
+													"value": "001",
+													"type": "text"
+												},
+												{
+													"key": "owner",
+													"value": "Arystanbek",
+													"type": "text"
+												},
+												{
+													"key": "amount",
+													"value": "570550",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{task1}}/cards/charge",
+											"host": [
+												"{{task1}}"
+											],
+											"path": [
+												"cards",
+												"charge"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 27 Jan 2024 07:02:00 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 27 Jan 2024 07:02:00 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.1.2-1ubuntu2.14"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Unauthenticated.\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Get Cards",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{task1}}/getCards",
+							"host": [
+								"{{task1}}"
+							],
+							"path": [
+								"getCards"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Task2",
+			"item": [
+				{
+					"name": "Orders",
+					"item": [
+						{
+							"name": "Create Order",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "token",
+											"value": "695cc3c3ec89a672166137a57ee66369",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "password",
+											"type": "text"
+										},
+										{
+											"key": "orderItems[0][id]",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "orderItems[0][qty]",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "card[number]",
+											"value": "2360862430467415",
+											"type": "text"
+										},
+										{
+											"key": "card[expiry_month]",
+											"value": "06",
+											"type": "text"
+										},
+										{
+											"key": "card[expiry_year]",
+											"value": "2025",
+											"type": "text"
+										},
+										{
+											"key": "card[csv]",
+											"value": "001",
+											"type": "text"
+										},
+										{
+											"key": "card[owner]",
+											"value": "Arystanbek",
+											"type": "text"
+										},
+										{
+											"key": "amount",
+											"value": "15",
+											"type": "text"
+										},
+										{
+											"key": "orderItems[1][id]",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "orderItems[1][qty]",
+											"value": "2",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{task2}}/orders/create",
+									"host": [
+										"{{task2}}"
+									],
+									"path": [
+										"orders",
+										"create"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "New Request",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "token",
+													"value": "38173ec07539d4b3c7cddaa8fa7b016b",
+													"type": "text"
+												},
+												{
+													"key": "password",
+													"value": "password",
+													"type": "text"
+												},
+												{
+													"key": "orderItems[0][id]",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "orderItems[0][qty]",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "card[number]",
+													"value": "2360862430467415",
+													"type": "text"
+												},
+												{
+													"key": "card[expiry_month]",
+													"value": "06",
+													"type": "text"
+												},
+												{
+													"key": "card[expiry_year]",
+													"value": "2025",
+													"type": "text"
+												},
+												{
+													"key": "card[csv]",
+													"value": "001",
+													"type": "text"
+												},
+												{
+													"key": "card[owner]",
+													"value": "Arystanbek",
+													"type": "text"
+												},
+												{
+													"key": "amount",
+													"value": "15",
+													"type": "text"
+												},
+												{
+													"key": "orderItems[1][id]",
+													"value": "2",
+													"type": "text"
+												},
+												{
+													"key": "orderItems[1][qty]",
+													"value": "2",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{task2}}/orders/create",
+											"host": [
+												"{{task2}}"
+											],
+											"path": [
+												"orders",
+												"create"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8001"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 27 Jan 2024 12:13:46 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 27 Jan 2024 12:13:46 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.1.2-1ubuntu2.14"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "58"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Неверный токен или пароль\"\n}"
+								},
+								{
+									"name": "New Request",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "token",
+													"value": "695cc3c3ec89a672166137a57ee66369",
+													"type": "text"
+												},
+												{
+													"key": "password",
+													"value": "password",
+													"type": "text"
+												},
+												{
+													"key": "orderItems[0][id]",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "orderItems[0][qty]",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "card[number]",
+													"value": "2360862430467415",
+													"type": "text"
+												},
+												{
+													"key": "card[expiry_month]",
+													"value": "06",
+													"type": "text"
+												},
+												{
+													"key": "card[expiry_year]",
+													"value": "2025",
+													"type": "text"
+												},
+												{
+													"key": "card[csv]",
+													"value": "001",
+													"type": "text"
+												},
+												{
+													"key": "card[owner]",
+													"value": "Arystanbek",
+													"type": "text"
+												},
+												{
+													"key": "amount",
+													"value": "15",
+													"type": "text"
+												},
+												{
+													"key": "orderItems[1][id]",
+													"value": "2",
+													"type": "text"
+												},
+												{
+													"key": "orderItems[1][qty]",
+													"value": "2",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{task2}}/orders/create",
+											"host": [
+												"{{task2}}"
+											],
+											"path": [
+												"orders",
+												"create"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8001"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 27 Jan 2024 12:16:42 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 27 Jan 2024 12:16:42 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.1.2-1ubuntu2.14"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "57"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Заказ успешно сформирован\",\n    \"order\": {\n        \"id\": 8,\n        \"client\": {\n            \"id\": 6,\n            \"client_id\": \"695cc3c3ec89a672166137a57ee66369\"\n        },\n        \"order_number\": \"dd3abced02c04462d0541bd937905a48\",\n        \"data\": [\n            {\n                \"name\": \"Apple iPhone 11\",\n                \"amount\": 700,\n                \"qty\": \"1\"\n            },\n            {\n                \"name\": \"Apple Airpods 3\",\n                \"amount\": 600,\n                \"qty\": \"2\"\n            }\n        ],\n        \"status\": \"paid\",\n        \"card\": {\n            \"number\": \"2360862430467415\",\n            \"date\": \"06/2025\",\n            \"name\": \"Arystanbek\"\n        },\n        \"date\": 1706357802,\n        \"amount\": 1900\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Get Order Status",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "client_id",
+											"value": "695cc3c3ec89a672166137a57ee66369",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "password",
+											"type": "text"
+										},
+										{
+											"key": "orderNumber",
+											"value": "ae250b101b65ffd1394fe8eaac0c5178",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{task2}}/orders/status",
+									"host": [
+										"{{task2}}"
+									],
+									"path": [
+										"orders",
+										"status"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "New Request Copy",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "client_id",
+													"value": "695cc3c3ec89a672166137a57ee66369",
+													"type": "text"
+												},
+												{
+													"key": "password",
+													"value": "password",
+													"type": "text"
+												},
+												{
+													"key": "orderNumber",
+													"value": "ae250b101b65ffd1394fe8eaac0c5178",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{task2}}/orders/status",
+											"host": [
+												"{{task2}}"
+											],
+											"path": [
+												"orders",
+												"status"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8001"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 27 Jan 2024 12:13:52 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 27 Jan 2024 12:13:52 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.1.2-1ubuntu2.14"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "57"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"order\": {\n        \"id\": 3,\n        \"client\": {\n            \"id\": 4,\n            \"client_id\": \"c23ed7afb1e136e0e03e74ec9edd3733\"\n        },\n        \"order_number\": \"ae250b101b65ffd1394fe8eaac0c5178\",\n        \"data\": [\n            {\n                \"name\": \"Breville Barista Express\",\n                \"amount\": 800,\n                \"qty\": 10\n            },\n            {\n                \"name\": \"Huawei P40 Pro\",\n                \"amount\": 800,\n                \"qty\": 4\n            },\n            {\n                \"name\": \"Corsair K95 RGB Platinum\",\n                \"amount\": 800,\n                \"qty\": 2\n            },\n            {\n                \"name\": \"Garmin Fenix 6\",\n                \"amount\": 1000,\n                \"qty\": 9\n            }\n        ],\n        \"status\": \"waiting\",\n        \"card\": {\n            \"number\": 2438165859876508,\n            \"date\": \"12/2108\",\n            \"name\": \"Johnathon Kuhlman\"\n        },\n        \"date\": 1706355466,\n        \"amount\": 21800\n    }\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "task1",
+			"value": "http://127.0.0.1:8000/api",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "token",
+			"type": "string"
+		},
+		{
+			"key": "task2",
+			"value": "http://127.0.0.1:8001/api",
+			"type": "string"
+		}
+	]
+}

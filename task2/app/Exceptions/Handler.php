@@ -2,7 +2,11 @@
 
 namespace App\Exceptions;
 
+use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Throwable;
 
 class Handler extends ExceptionHandler
@@ -24,7 +28,17 @@ class Handler extends ExceptionHandler
     public function register(): void
     {
         $this->reportable(function (Throwable $e) {
-            //
+            $this->renderable(function (AuthorizationException|AccessDeniedHttpException $e) {
+                return response()->json([
+                    'message' => 'Доступ запрещен'
+                ], Response::HTTP_FORBIDDEN);
+            });
+
+            $this->renderable(function (NotFoundHttpException $e) {
+                return response()->json([
+                    'message' => 'Не найдено',
+                ], Response::HTTP_NOT_FOUND);
+            });
         });
     }
 }
