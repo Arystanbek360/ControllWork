@@ -16,6 +16,9 @@ class OrderService
     {
     }
 
+    /**
+     * @return array{message: string, order: mixed}
+     */
     public function createOrder(array $data): array
     {
         $acquiringClient = $this->getAcquiringClient($data['token'], $data['password']);
@@ -31,7 +34,13 @@ class OrderService
         ];
     }
 
-    protected function getAcquiringClient($token, $password)
+    /**
+     * @param $token
+     * @param $password
+     * @return AcquiringClient
+     * @throws Exception
+     */
+    protected function getAcquiringClient($token, $password): AcquiringClient
     {
         $acquiringClient = AcquiringClient::where('client_id', $token)->first();
         if (!$acquiringClient || !Hash::check($password, $acquiringClient->password)) {
@@ -40,7 +49,11 @@ class OrderService
         return $acquiringClient;
     }
 
-    protected function getOrderItems($orderItems)
+    /**
+     * @param $orderItems
+     * @return array
+     */
+    protected function getOrderItems($orderItems): array
     {
         $orderData = [];
         foreach ($orderItems as $orderItem) {
@@ -56,7 +69,13 @@ class OrderService
         return $orderData;
     }
 
-    protected function storeOrder($clientId, $orderData, $cardData)
+    /**
+     * @param $clientId
+     * @param $orderData
+     * @param $cardData
+     * @return Order
+     */
+    protected function storeOrder($clientId, $orderData, $cardData): Order
     {
         return Order::create([
             'acquiring_client_id' => $clientId,
@@ -67,7 +86,13 @@ class OrderService
         ]);
     }
 
-    protected function processPayment(Order $order, array $cardData)
+    /**
+     * @param Order $order
+     * @param array $cardData
+     * @return void
+     * @throws Exception
+     */
+    protected function processPayment(Order $order, array $cardData): void
     {
         $response = $this->paymentService->chargeCard($cardData, $order->amount());
 
@@ -81,6 +106,9 @@ class OrderService
         }
     }
 
+    /**
+     * @return array{order: mixed}
+     */
     public function getOrderStatus(array $data): array
     {
         $this->getAcquiringClient($data['client_id'], $data['password']);

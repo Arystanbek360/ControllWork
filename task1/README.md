@@ -6,7 +6,7 @@
 
 ### Требования
 
-- PHP >= 7.3
+- PHP >= 8.0
 - Composer
 - СУБД (например, MySQL или PostgreSQL)
 - Web сервер (например, Apache, Nginx)
