@@ -1,0 +1,948 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "CW",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8080/api"
+    },
+    {
+      "url": "http://localhost:8081/api"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Task 1"
+    },
+    {
+      "name": "Task 1 > Acquiring"
+    },
+    {
+      "name": "Task2"
+    },
+    {
+      "name": "Task2 > Orders"
+    }
+  ],
+  "paths": {
+    "/cards/{cardNumber}": {
+      "get": {
+        "tags": [
+          "Task 1 > Acquiring"
+        ],
+        "summary": "Get Card",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/json"
+          },
+          {
+            "name": "cardNumber",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "123456123456"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Host": {
+                "schema": {
+                  "type": "number",
+                  "example": "127.0.0.1:8000"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Sat, 27 Jan 2024 06:27:19 GMT"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "close"
+                }
+              },
+              "X-Powered-By": {
+                "schema": {
+                  "type": "number",
+                  "example": "PHP/8.1.2-1ubuntu2.14"
+                }
+              },
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "example": "no-cache, private"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              },
+              "X-RateLimit-Limit": {
+                "schema": {
+                  "type": "integer",
+                  "example": "60"
+                }
+              },
+              "X-RateLimit-Remaining": {
+                "schema": {
+                  "type": "integer",
+                  "example": "58"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "message": "Карта с номером 6393210982907237 найдена",
+                  "card": {
+                    "id": 4,
+                    "number": 6393210982907237,
+                    "expiry_month": "7",
+                    "expiry_year": 2148,
+                    "csv": "$2y$12$rHQnq.GLwpjqM/xf.3Os0.pp96JJjlLZRsfn8r4zsdJjIfF0Fh.wq",
+                    "name": "Gianni Yost Jr.",
+                    "balance": "570950.00"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "headers": {
+              "Host": {
+                "schema": {
+                  "type": "number",
+                  "example": "127.0.0.1:8000"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Sat, 27 Jan 2024 07:00:51 GMT"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "close"
+                }
+              },
+              "X-Powered-By": {
+                "schema": {
+                  "type": "number",
+                  "example": "PHP/8.1.2-1ubuntu2.14"
+                }
+              },
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "example": "no-cache, private"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "message": "Unauthenticated."
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "headers": {
+              "Host": {
+                "schema": {
+                  "type": "number",
+                  "example": "127.0.0.1:8000"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Sat, 27 Jan 2024 07:00:32 GMT"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "close"
+                }
+              },
+              "X-Powered-By": {
+                "schema": {
+                  "type": "number",
+                  "example": "PHP/8.1.2-1ubuntu2.14"
+                }
+              },
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "example": "no-cache, private"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              },
+              "X-RateLimit-Limit": {
+                "schema": {
+                  "type": "integer",
+                  "example": "60"
+                }
+              },
+              "X-RateLimit-Remaining": {
+                "schema": {
+                  "type": "integer",
+                  "example": "56"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "message": "Карта с номером 6393210982907234 не найдена."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/cards/charge": {
+      "post": {
+        "tags": [
+          "Task 1 > Acquiring"
+        ],
+        "summary": "Payment",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "number": {
+                    "type": "integer",
+                    "example": "6393210982907237"
+                  },
+                  "expiry_month": {
+                    "type": "integer",
+                    "example": "02"
+                  },
+                  "csv": {
+                    "type": "integer",
+                    "example": "001"
+                  },
+                  "owner": {
+                    "type": "string",
+                    "example": "Arystanbek"
+                  },
+                  "amount": {
+                    "type": "integer",
+                    "example": "570550"
+                  },
+                  "expiry_year": {
+                    "type": "integer",
+                    "example": "2024"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/json"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Host": {
+                "schema": {
+                  "type": "number",
+                  "example": "127.0.0.1:8000"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Sat, 27 Jan 2024 06:27:03 GMT"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "close"
+                }
+              },
+              "X-Powered-By": {
+                "schema": {
+                  "type": "number",
+                  "example": "PHP/8.1.2-1ubuntu2.14"
+                }
+              },
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "example": "no-cache, private"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              },
+              "X-RateLimit-Limit": {
+                "schema": {
+                  "type": "integer",
+                  "example": "60"
+                }
+              },
+              "X-RateLimit-Remaining": {
+                "schema": {
+                  "type": "integer",
+                  "example": "59"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "message": "Средства успешно списаны",
+                  "balance": 570950
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "headers": {
+              "Host": {
+                "schema": {
+                  "type": "number",
+                  "example": "127.0.0.1:8000"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Sat, 27 Jan 2024 07:01:43 GMT"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "close"
+                }
+              },
+              "X-Powered-By": {
+                "schema": {
+                  "type": "number",
+                  "example": "PHP/8.1.2-1ubuntu2.14"
+                }
+              },
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "example": "no-cache, private"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              },
+              "X-RateLimit-Limit": {
+                "schema": {
+                  "type": "integer",
+                  "example": "60"
+                }
+              },
+              "X-RateLimit-Remaining": {
+                "schema": {
+                  "type": "integer",
+                  "example": "55"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "message": "Недостаточно средств на карте"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "headers": {
+              "Host": {
+                "schema": {
+                  "type": "number",
+                  "example": "127.0.0.1:8000"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Sat, 27 Jan 2024 07:02:00 GMT"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "close"
+                }
+              },
+              "X-Powered-By": {
+                "schema": {
+                  "type": "number",
+                  "example": "PHP/8.1.2-1ubuntu2.14"
+                }
+              },
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "example": "no-cache, private"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "message": "Unauthenticated."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/getCards": {
+      "get": {
+        "tags": [
+          "Task 1"
+        ],
+        "summary": "Get Cards",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/orders/create": {
+      "post": {
+        "tags": [
+          "Task2 > Orders"
+        ],
+        "summary": "Create Order",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "token": {
+                    "type": "string",
+                    "example": "695cc3c3ec89a672166137a57ee66369"
+                  },
+                  "password": {
+                    "type": "string",
+                    "example": "password"
+                  },
+                  "orderItems[0][id]": {
+                    "type": "integer",
+                    "example": "1"
+                  },
+                  "orderItems[0][qty]": {
+                    "type": "integer",
+                    "example": "1"
+                  },
+                  "card[number]": {
+                    "type": "integer",
+                    "example": "2360862430467415"
+                  },
+                  "card[expiry_month]": {
+                    "type": "integer",
+                    "example": "06"
+                  },
+                  "card[expiry_year]": {
+                    "type": "integer",
+                    "example": "2025"
+                  },
+                  "card[csv]": {
+                    "type": "integer",
+                    "example": "001"
+                  },
+                  "card[owner]": {
+                    "type": "string",
+                    "example": "Arystanbek"
+                  },
+                  "amount": {
+                    "type": "integer",
+                    "example": "15"
+                  },
+                  "orderItems[1][id]": {
+                    "type": "integer",
+                    "example": "2"
+                  },
+                  "orderItems[1][qty]": {
+                    "type": "integer",
+                    "example": "2"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/json"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Host": {
+                "schema": {
+                  "type": "number",
+                  "example": "127.0.0.1:8001"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Sat, 27 Jan 2024 12:16:42 GMT"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "close"
+                }
+              },
+              "X-Powered-By": {
+                "schema": {
+                  "type": "number",
+                  "example": "PHP/8.1.2-1ubuntu2.14"
+                }
+              },
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "example": "no-cache, private"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              },
+              "X-RateLimit-Limit": {
+                "schema": {
+                  "type": "integer",
+                  "example": "60"
+                }
+              },
+              "X-RateLimit-Remaining": {
+                "schema": {
+                  "type": "integer",
+                  "example": "57"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "message": "Заказ успешно сформирован",
+                  "order": {
+                    "id": 8,
+                    "client": {
+                      "id": 6,
+                      "client_id": "695cc3c3ec89a672166137a57ee66369"
+                    },
+                    "order_number": "dd3abced02c04462d0541bd937905a48",
+                    "data": [
+                      {
+                        "name": "Apple iPhone 11",
+                        "amount": 700,
+                        "qty": "1"
+                      },
+                      {
+                        "name": "Apple Airpods 3",
+                        "amount": 600,
+                        "qty": "2"
+                      }
+                    ],
+                    "status": "paid",
+                    "card": {
+                      "number": "2360862430467415",
+                      "date": "06/2025",
+                      "name": "Arystanbek"
+                    },
+                    "date": 1706357802,
+                    "amount": 1900
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "headers": {
+              "Host": {
+                "schema": {
+                  "type": "number",
+                  "example": "127.0.0.1:8001"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Sat, 27 Jan 2024 12:13:46 GMT"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "close"
+                }
+              },
+              "X-Powered-By": {
+                "schema": {
+                  "type": "number",
+                  "example": "PHP/8.1.2-1ubuntu2.14"
+                }
+              },
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "example": "no-cache, private"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              },
+              "X-RateLimit-Limit": {
+                "schema": {
+                  "type": "integer",
+                  "example": "60"
+                }
+              },
+              "X-RateLimit-Remaining": {
+                "schema": {
+                  "type": "integer",
+                  "example": "58"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "message": "Неверный токен или пароль"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/orders/status": {
+      "post": {
+        "tags": [
+          "Task2 > Orders"
+        ],
+        "summary": "Get Order Status",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "client_id": {
+                    "type": "string",
+                    "example": "695cc3c3ec89a672166137a57ee66369"
+                  },
+                  "password": {
+                    "type": "string",
+                    "example": "password"
+                  },
+                  "orderNumber": {
+                    "type": "string",
+                    "example": "ae250b101b65ffd1394fe8eaac0c5178"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/json"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Host": {
+                "schema": {
+                  "type": "number",
+                  "example": "127.0.0.1:8001"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Sat, 27 Jan 2024 12:13:52 GMT"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "close"
+                }
+              },
+              "X-Powered-By": {
+                "schema": {
+                  "type": "number",
+                  "example": "PHP/8.1.2-1ubuntu2.14"
+                }
+              },
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "example": "no-cache, private"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              },
+              "X-RateLimit-Limit": {
+                "schema": {
+                  "type": "integer",
+                  "example": "60"
+                }
+              },
+              "X-RateLimit-Remaining": {
+                "schema": {
+                  "type": "integer",
+                  "example": "57"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "order": {
+                    "id": 3,
+                    "client": {
+                      "id": 4,
+                      "client_id": "c23ed7afb1e136e0e03e74ec9edd3733"
+                    },
+                    "order_number": "ae250b101b65ffd1394fe8eaac0c5178",
+                    "data": [
+                      {
+                        "name": "Breville Barista Express",
+                        "amount": 800,
+                        "qty": 10
+                      },
+                      {
+                        "name": "Huawei P40 Pro",
+                        "amount": 800,
+                        "qty": 4
+                      },
+                      {
+                        "name": "Corsair K95 RGB Platinum",
+                        "amount": 800,
+                        "qty": 2
+                      },
+                      {
+                        "name": "Garmin Fenix 6",
+                        "amount": 1000,
+                        "qty": 9
+                      }
+                    ],
+                    "status": "waiting",
+                    "card": {
+                      "number": 2438165859876508,
+                      "date": "12/2108",
+                      "name": "Johnathon Kuhlman"
+                    },
+                    "date": 1706355466,
+                    "amount": 21800
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,25 +1,18 @@
 FROM php:8.1-fpm
 
-RUN apt-get update && apt-get install -y \
-    libzip-dev \
-    unzip \
-    libpq-dev \
-    && docker-php-ext-install pdo pdo_pgsql zip
+RUN apt-get update && apt-get install -y libpng-dev libjpeg-dev libfreetype6-dev zip unzip git
 
+# Устанавливаем Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
+WORKDIR /var/www
 COPY . /var/www
 
-WORKDIR /var/www
 RUN composer install
 
 RUN chown -R www-data:www-data /var/www/storage
 
+WORKDIR /var/www/public
 
-ENV DB_CONNECTION=pgsql
-ENV DB_DATABASE=task1
-ENV DB_USERNAME=aris
-ENV DB_PASSWORD=password
-ENV AUTH_TOKEN=OktIGTnlJlvjdzeMcKTlcuTsF
-
+EXPOSE 9000
 CMD ["php-fpm"]
