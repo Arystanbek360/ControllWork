@@ -14,5 +14,5 @@ RUN chown -R www-data:www-data /var/www/storage
 
 WORKDIR /var/www/public
 
-EXPOSE 9002
+EXPOSE 9001
 CMD ["php-fpm"]
